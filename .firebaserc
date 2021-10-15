@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-chat-69961": {
+      "hosting": {
+        "angular-chat": [
+          "angular-chat-69961"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-chat-69961"
+  }
+}

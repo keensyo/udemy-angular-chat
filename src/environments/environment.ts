@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyBjWMczsjNpAksvfTkBHhofJWXW-r6FGWI",
+    authDomain: "angular-chat-69961.firebaseapp.com",
+    projectId: "angular-chat-69961",
+    storageBucket: "angular-chat-69961.appspot.com",
+    messagingSenderId: "733555984451",
+    appId: "1:733555984451:web:dccd80ef660d253d63ecf6"
+  }
 };
 
 /*
