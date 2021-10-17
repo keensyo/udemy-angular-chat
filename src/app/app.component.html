@@ -17,7 +17,7 @@
               <h4 class="media-heading">{{ comment.user.name }}
                 <ng-container *ngIf="comment.user.uid === currentUser.uid">
                   <i class="fa fa-edit ml-2" title="編集" (click)="comment.isEdit = !comment.isEdit"></i>
-                  <i class="fa fa-trash ml-2" title="削除"></i>
+                  <i class="fa fa-trash ml-2" title="削除" (click)="deleteComment(comment)"></i>
                 </ng-container>
               </h4>
               <small class="media-date">{{ comment.date | commentDate }}</small>
@@ -30,7 +30,7 @@
                 <textarea [(ngModel)]="comment.message" name="edit-comment"class="form-cotrol"></textarea>
               </div>
               <div class="edit-buttons">
-                <button class="btn btn-success btn-sm">保存</button>
+                <button class="btn btn-success btn-sm" (click)="updateCo">保存</button>
                 <button class="btn btn-warning btn-sm">キャンセル</button>
               </div>
             </ng-container>
@@ -40,24 +40,6 @@
             class="media-right"
           >
             <a href="#" class="icon">{{ comment.user.initial }}</a>
-          </div>
-        </div>
-      </div>
-      <div
-        *ngIf="item$ | async as item"
-        class="list-group-item list-group-item-action flex-column align-items-start border-0"
-      >
-        <div class="media">
-          <div
-            class="media-left"
-          >
-            <a href="#" class="icon"></a>
-          </div>
-          <div class="media-body">
-            <div class="d-flex w-100 justify-content-between">
-              <h4 class="media-heading">{{ item.name }}</h4>
-            </div>
-            <pre>{{ item.message }}</pre>
           </div>
         </div>
       </div>

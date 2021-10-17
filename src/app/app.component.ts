@@ -15,14 +15,13 @@ const ANOTHER_USER: User = new User(2, 'usui');
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   comments$: Observable<Comment[]>;
   commentsRef: AngularFireList<Comment>;
   currentUser = CURRENT_USER;
   comment = '';
-  item$: Observable<any>;
 
   constructor(private db: AngularFireDatabase) {
-    this.item$ = db.object('/item').valueChanges();
     this.commentsRef = db.list('/comments');
     this.comments$ = this.commentsRef.snapshotChanges()
       .pipe(
@@ -41,5 +40,15 @@ export class AppComponent {
       this.comment = '';
     }
   }
-  
+
+  updateComment(comment: Comment): void {
+    const { key, message} = comment;
+
+    this.commentsRef.update(key, { message });
+  }
+
+  deleteComment(comment: Comment): void {
+    this.commentsRef.remove(comment.key);
+  }
+
 }
