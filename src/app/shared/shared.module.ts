@@ -15,5 +15,6 @@ import { CommentDatePipe } from '../pipes/comment-date.pipe';
   exports: [
     FormsModule,
     CommentDatePipe
+  ]
 })
 export class SharedModule { }
