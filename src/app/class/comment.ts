@@ -6,7 +6,7 @@ export class Comment {
   message: string;
   date: number;
   key?: string;
-  isEdit: boolean;
+  isEdit?: boolean;
 
   constructor(value: any) {
     this.user = value.user;
